@@ -1,67 +1,27 @@
 /* ===================== DONNEES (FR / EN regroupées par item) ===================== */
 const contentData = {
 
-  /* ---- Profil : domaines d'expertise ---- */
-  profile: [
+  /* ---- Compétences : fusion des domaines d'activité et des technologies ---- */
+  skills: [
     {
       fr: { title: "Appels d'offres & Avant-vente", details: "Analyse des cahiers des charges et des besoins clients, étude et sélection des solutions adaptées, comparaison des solutions techniques, élaboration des réponses techniques et financières avec l'équipe commerciale, conseil et accompagnement des clients dans leurs choix technologiques." },
       en: { title: "Tenders & Pre-Sales", details: "Analysis of specifications and client needs, review and selection of suitable solutions, comparison of technical options, drafting of technical and financial proposals with the sales team, advising and supporting clients in their technology choices." }
     },
     {
-      fr: { title: "Gestion de Projets IT & ITIL", details: "Gestion des projets de bout en bout selon les bonnes pratiques de la méthodologie ITIL, de la réunion de démarrage au déploiement, en passant par la planification, la coordination des intervenants, le suivi des actions, la mise en service, la recette et le suivi post-déploiement." },
-      en: { title: "IT Project Management & ITIL", details: "End-to-end project management following ITIL best practices, from the kickoff meeting to deployment, including planning, stakeholder coordination, action tracking, go-live, acceptance testing and post-deployment follow-up." }
+      fr: { title: "Gestion de Projets IT & ITIL", subtitle: "Méthodologie ITIL", details: "Gestion des projets de bout en bout selon les bonnes pratiques de la méthodologie ITIL, de la réunion de démarrage au déploiement, en passant par la planification, la coordination des intervenants, le suivi des actions, la mise en service, la recette et le suivi post-déploiement." },
+      en: { title: "IT Project Management & ITIL", subtitle: "ITIL Methodology", details: "End-to-end project management following ITIL best practices, from the kickoff meeting to deployment, including planning, stakeholder coordination, action tracking, go-live, acceptance testing and post-deployment follow-up." }
     },
     {
-      fr: { title: "Administration Serveurs & Postes de Travail", details: "Installation, administration, configuration et maintenance des environnements Windows Server et Linux, ainsi que des postes de travail Windows ; gestion des services systèmes, diagnostic et résolution des incidents et assistance technique." },
-      en: { title: "Server & Workstation Administration", details: "Installation, administration, configuration and maintenance of Windows Server and Linux environments, as well as Windows workstations; management of system services, incident diagnosis and resolution, and technical support." }
+      fr: { title: "Administration Serveurs & Postes de Travail", subtitle: "Windows Server · Linux", details: "Installation, administration, configuration et maintenance des environnements Windows Server et Linux, ainsi que des postes de travail Windows ; gestion des services systèmes, diagnostic et résolution des incidents et assistance technique." },
+      en: { title: "Server & Workstation Administration", subtitle: "Windows Server · Linux", details: "Installation, administration, configuration and maintenance of Windows Server and Linux environments, as well as Windows workstations; management of system services, incident diagnosis and resolution, and technical support." }
     },
     {
-      fr: { title: "Virtualisation & Datacenter", details: "Conception, déploiement et administration d'environnements virtualisés et d'infrastructures datacenter, notamment VMware, Hyper-V, Nutanix AHV et Proxmox." },
-      en: { title: "Virtualization & Data Center", details: "Design, deployment and administration of virtualized environments and data center infrastructures, including VMware, Hyper-V, Nutanix AHV and Proxmox." }
+      fr: { title: "Virtualisation & Datacenter", subtitle: "VMware · Hyper-V · Nutanix AHV · Proxmox", details: "Conception, déploiement et administration d'environnements virtualisés et d'infrastructures datacenter, notamment VMware, Hyper-V, Nutanix AHV et Proxmox." },
+      en: { title: "Virtualization & Data Center", subtitle: "VMware · Hyper-V · Nutanix AHV · Proxmox", details: "Design, deployment and administration of virtualized environments and data center infrastructures, including VMware, Hyper-V, Nutanix AHV and Proxmox." }
     },
     {
-      fr: { title: "Infrastructures SAN & Hyperconvergées", details: "Déploiement, configuration et administration de solutions de stockage SAN et d'infrastructures hyperconvergées (HCI)." },
-      en: { title: "SAN & Hyperconverged Infrastructures", details: "Deployment, configuration and administration of SAN storage solutions and hyperconverged infrastructures (HCI)." }
-    },
-    {
-      fr: { title: "Cloud & Infrastructures IT", details: "Participation à la conception, au déploiement et à l'administration de solutions Cloud et d'infrastructures IT modernes." },
-      en: { title: "Cloud & IT Infrastructure", details: "Involved in the design, deployment and administration of Cloud solutions and modern IT infrastructures." }
-    },
-    {
-      fr: { title: "PRA & PCA", details: "Conception et mise en œuvre de solutions de Plan de Reprise d'Activité (PRA) et de Plan de Continuité d'Activité (PCA), avec prise en compte des enjeux de disponibilité, sauvegarde et reprise des services." },
-      en: { title: "DRP & BCP", details: "Design and implementation of Disaster Recovery Plan (DRP) and Business Continuity Plan (BCP) solutions, addressing availability, backup and service-restoration requirements." }
-    },
-    {
-      fr: { title: "Maintenance & Support", details: "Maintenance préventive et corrective, diagnostic et résolution des incidents, support technique et accompagnement des clients." },
-      en: { title: "Maintenance & Support", details: "Preventive and corrective maintenance, incident diagnosis and resolution, technical support and client assistance." }
-    },
-    {
-      fr: { title: "Documentation & Livrables Projets", details: "Élaboration des BOM (Bill of Materials) et des LLD (Low-Level Design) en phase de conception, préparation des documents techniques et des offres financières avec l'équipe commerciale lors des appels d'offres, rédaction des procédures et documents d'exploitation en fin de projet, ainsi que préparation et formalisation des procès-verbaux de recette (PV)." },
-      en: { title: "Documentation & Project Deliverables", details: "Preparation of BOMs (Bill of Materials) and LLDs (Low-Level Design) during the design phase, preparation of technical documents and financial proposals with the sales team during tenders, drafting of operating procedures and documentation at project close, and preparation of acceptance sign-off reports." }
-    },
-    {
-      fr: { title: "Relation Client & Coordination", details: "Participation et animation de réunions techniques avec les clients, présentation des solutions et des architectures, suivi des besoins et coordination des différents intervenants tout au long des projets." },
-      en: { title: "Client Relations & Coordination", details: "Participation in and facilitation of technical meetings with clients, presentation of solutions and architectures, tracking of requirements and coordination of stakeholders throughout projects." }
-    },
-    {
-      fr: { title: "Formation & Veille Technologique", details: "Participation à des webinaires, formations techniques et ateliers chez les partenaires technologiques, développement continu des compétences et préparation de certifications professionnelles sur les technologies et solutions d'infrastructure." },
-      en: { title: "Training & Technology Watch", details: "Participation in webinars, technical training and workshops with technology partners, continuous skills development and preparation for professional certifications on infrastructure technologies and solutions." }
-    },
-    {
-      fr: { title: "Formation & Accompagnement", details: "Formation et accompagnement des stagiaires et nouveaux collaborateurs, transmission des bonnes pratiques et suivi de leur montée en compétences sur les systèmes, la virtualisation et les infrastructures IT." },
-      en: { title: "Mentoring & Team Support", details: "Training and mentoring of interns and new team members, sharing best practices and supporting their skill development in systems, virtualization and IT infrastructure." }
-    }
-  ],
-
-  /* ---- Compétences techniques ---- */
-  skills: [
-    {
-      fr: { title: "Virtualisation & Hyperconvergence", subtitle: "VMware · Nutanix · Hyper-V · Proxmox", details: "Conception, déploiement et administration de clusters virtualisés et hyperconvergés sur les environnements VMware vSphere, Nutanix AHV, Microsoft Hyper-V et Proxmox VE." },
-      en: { title: "Virtualization & Hyperconvergence", subtitle: "VMware · Nutanix · Hyper-V · Proxmox", details: "Design, deployment and administration of virtualized and hyperconverged clusters across VMware vSphere, Nutanix AHV, Microsoft Hyper-V and Proxmox VE environments." }
-    },
-    {
-      fr: { title: "Administration Systèmes", subtitle: "Windows Server · Linux", details: "Installation, configuration, durcissement et maintenance des environnements Windows Server et Linux, gestion des services systèmes et résolution d'incidents." },
-      en: { title: "Systems Administration", subtitle: "Windows Server · Linux", details: "Installation, configuration, hardening and maintenance of Windows Server and Linux environments, management of system services and incident resolution." }
+      fr: { title: "Infrastructures SAN & Hyperconvergées", subtitle: "Stockage SAN · HCI", details: "Déploiement, configuration et administration de solutions de stockage SAN et d'infrastructures hyperconvergées (HCI)." },
+      en: { title: "SAN & Hyperconverged Infrastructures", subtitle: "SAN Storage · HCI", details: "Deployment, configuration and administration of SAN storage solutions and hyperconverged infrastructures (HCI)." }
     },
     {
       fr: { title: "Identité & Annuaire", subtitle: "Active Directory · GPO · DNS · Microsoft 365 · Entra Connect", details: "Administration d'annuaires Active Directory, stratégies de groupe (GPO) et DNS, ainsi que synchronisation d'identité hybride avec Microsoft Entra Connect et gestion Microsoft 365." },
@@ -84,12 +44,32 @@ const contentData = {
       en: { title: "Standards & Compliance", subtitle: "ISO 27001/27005 · ANSSI · DISA STIG · NIS2", details: "Solid knowledge of the ISO 27001/27005 security frameworks, ANSSI recommendations, DISA STIG hardening guides and the EU NIS2 directive." }
     },
     {
-      fr: { title: "Gestion de Projet IT", subtitle: "Méthodologie ITIL", details: "Pilotage de projets IT de bout en bout selon les bonnes pratiques ITIL : cadrage, planification, coordination des intervenants, déploiement et suivi post-projet." },
-      en: { title: "IT Project Management", subtitle: "ITIL Methodology", details: "End-to-end delivery of IT projects following ITIL best practices: scoping, planning, stakeholder coordination, deployment and post-project follow-up." }
+      fr: { title: "Cloud & Infrastructures IT", details: "Participation à la conception, au déploiement et à l'administration de solutions Cloud et d'infrastructures IT modernes." },
+      en: { title: "Cloud & IT Infrastructure", details: "Involved in the design, deployment and administration of Cloud solutions and modern IT infrastructures." }
     },
     {
-      fr: { title: "Maintenance & Support", subtitle: "Support technique · Réponse aux incidents", details: "Maintenance préventive et corrective, diagnostic et résolution d'incidents, support technique de niveau 2/3 et accompagnement des utilisateurs." },
-      en: { title: "Maintenance & Support", subtitle: "Technical Support · Incident Response", details: "Preventive and corrective maintenance, incident diagnosis and resolution, level 2/3 technical support and user assistance." }
+      fr: { title: "PRA & PCA", details: "Conception et mise en œuvre de solutions de Plan de Reprise d'Activité (PRA) et de Plan de Continuité d'Activité (PCA), avec prise en compte des enjeux de disponibilité, sauvegarde et reprise des services." },
+      en: { title: "DRP & BCP", details: "Design and implementation of Disaster Recovery Plan (DRP) and Business Continuity Plan (BCP) solutions, addressing availability, backup and service-restoration requirements." }
+    },
+    {
+      fr: { title: "Maintenance & Support", subtitle: "Support technique · Réponse aux incidents", details: "Maintenance préventive et corrective, diagnostic et résolution des incidents, support technique de niveau 2/3 et accompagnement des clients et utilisateurs." },
+      en: { title: "Maintenance & Support", subtitle: "Technical Support · Incident Response", details: "Preventive and corrective maintenance, incident diagnosis and resolution, level 2/3 technical support and assistance to clients and users." }
+    },
+    {
+      fr: { title: "Documentation & Livrables Projets", details: "Élaboration des BOM (Bill of Materials) et des LLD (Low-Level Design) en phase de conception, préparation des documents techniques et des offres financières avec l'équipe commerciale lors des appels d'offres, rédaction des procédures et documents d'exploitation en fin de projet, ainsi que préparation et formalisation des procès-verbaux de recette (PV)." },
+      en: { title: "Documentation & Project Deliverables", details: "Preparation of BOMs (Bill of Materials) and LLDs (Low-Level Design) during the design phase, preparation of technical documents and financial proposals with the sales team during tenders, drafting of operating procedures and documentation at project close, and preparation of acceptance sign-off reports." }
+    },
+    {
+      fr: { title: "Relation Client & Coordination", details: "Participation et animation de réunions techniques avec les clients, présentation des solutions et des architectures, suivi des besoins et coordination des différents intervenants tout au long des projets." },
+      en: { title: "Client Relations & Coordination", details: "Participation in and facilitation of technical meetings with clients, presentation of solutions and architectures, tracking of requirements and coordination of stakeholders throughout projects." }
+    },
+    {
+      fr: { title: "Formation & Veille Technologique", details: "Participation à des webinaires, formations techniques et ateliers chez les partenaires technologiques, développement continu des compétences et préparation de certifications professionnelles sur les technologies et solutions d'infrastructure." },
+      en: { title: "Training & Technology Watch", details: "Participation in webinars, technical training and workshops with technology partners, continuous skills development and preparation for professional certifications on infrastructure technologies and solutions." }
+    },
+    {
+      fr: { title: "Formation & Accompagnement", details: "Formation et accompagnement des stagiaires et nouveaux collaborateurs, transmission des bonnes pratiques et suivi de leur montée en compétences sur les systèmes, la virtualisation et les infrastructures IT." },
+      en: { title: "Mentoring & Team Support", details: "Training and mentoring of interns and new team members, sharing best practices and supporting their skill development in systems, virtualization and IT infrastructure." }
     }
   ],
 
@@ -200,7 +180,7 @@ function renderProjects(lang) {
   }).join('');
 }
 
-/* ===================== RENDU : TILES (profil / competences / certifications) ===================== */
+/* ===================== RENDU : TILES (competences / certifications) ===================== */
 function renderTiles(containerId, sectionKey, lang) {
   const el = document.getElementById(containerId);
   if (!el) return;
@@ -209,13 +189,9 @@ function renderTiles(containerId, sectionKey, lang) {
 
   el.innerHTML = list.map(function (item, i) {
     const t = getLocalized(item, lang);
-    const badge = sectionKey === 'profile'
-      ? '<span class="tile-index">' + String(i + 1).padStart(2, '0') + '</span>'
-      : '';
     const subtitle = t.subtitle ? '<p class="tile-subtitle">' + t.subtitle + '</p>' : '';
     return (
       '<div class="tile-card">' +
-        badge +
         '<div class="tile-head">' +
           '<h3>' + t.title + '</h3>' +
           '<button class="btn-more" onclick="openInfoModal(\'' + sectionKey + '\', ' + i + ')">' + btnLabel + ' &rarr;</button>' +
@@ -262,7 +238,6 @@ function setLang(lang) {
 
   currentLang = lang;
   renderProjects(lang);
-  renderTiles('profile-grid', 'profile', lang);
   renderTiles('skills-grid', 'skills', lang);
   renderTiles('certifications-grid', 'certifications', lang);
 }
