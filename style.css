@@ -25,7 +25,6 @@ body {
   padding: 0 24px;
 }
 
-/* Masquage fiable, quel que soit le type d'affichage de l'élément (bloc, grille, flex...). */
 .lang-hidden { display: none !important; }
 
 /* ===================== HERO ===================== */
@@ -355,10 +354,10 @@ body {
 
 .btn-details:hover { background: var(--dark-blue); }
 
-/* ===================== TILES (competences / certifications) ===================== */
+/* ===================== TILES (competences) ===================== */
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
 }
 
@@ -414,7 +413,45 @@ body {
 .btn-more:hover { color: var(--dark-blue); text-decoration: underline; }
 
 .skills-tiles .tile-card { border-top: 3px solid var(--primary-blue); }
-.cert-tiles .tile-card { border-top: 3px solid var(--dark-blue); }
+
+/* ===================== CERTIFICATIONS (liste) ===================== */
+.cert-plain-list {
+  list-style: none;
+  max-width: 760px;
+}
+
+.cert-plain-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cert-plain-item:last-child { border-bottom: none; }
+
+.cert-plain-name {
+  font-weight: 700;
+  color: var(--dark-blue);
+  font-size: 0.98rem;
+}
+
+.btn-cert-details {
+  flex-shrink: 0;
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-cert-details:hover { background: var(--dark-blue); }
 
 /* ===================== MODALE ===================== */
 .modal {
@@ -432,7 +469,7 @@ body {
 
 .modal-box {
   background: var(--white);
-  max-width: 620px;
+  max-width: 640px;
   width: 100%;
   max-height: 82vh;
   overflow-y: auto;
@@ -462,11 +499,38 @@ body {
 
 .modal-box .tag-list { margin-bottom: 16px; }
 
-.modal-box p {
+/* Contenu structuré (étapes, matériel, sous-parties) à l'intérieur de la modale */
+.modal-details h4 {
+  color: var(--dark-blue);
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 18px 0 8px;
+}
+
+.modal-details h4:first-child { margin-top: 0; }
+
+.modal-details p {
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-dark);
+  margin-bottom: 10px;
 }
+
+.modal-details ul,
+.modal-details ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-details li {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.modal-details strong { color: var(--dark-blue); }
 
 /* ===================== LANGUES (cartes détaillées) ===================== */
 .lang-detail-grid {
@@ -533,6 +597,51 @@ body {
 .ref-card p { font-size: 0.9rem; margin-bottom: 4px; }
 .ref-card a { color: var(--primary-blue); }
 
+.ref-mentor-tag {
+  font-weight: 600;
+  color: var(--primary-blue);
+  font-size: 0.85em;
+}
+
+.ref-extra {
+  font-size: 0.85rem;
+  color: #4a5a6a;
+  font-style: italic;
+  margin: 4px 0 6px;
+}
+
+/* ===================== SOFT SKILLS ===================== */
+.softskills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.softskills-col h3 {
+  color: var(--dark-blue);
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+
+.softskills-list { list-style: none; }
+
+.softskills-list li {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: var(--light-blue-bg);
+  border-radius: 4px;
+  border-left: 3px solid var(--primary-blue);
+  font-size: 0.9rem;
+  color: #33404d;
+}
+
+.softskills-list li strong { color: var(--dark-blue); }
+
+.softskills-list.plain li {
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
 /* ===================== FOOTER ===================== */
 .footer {
   background: var(--dark-blue);
@@ -573,6 +682,26 @@ body {
 
 @media (max-width: 700px) {
   .refs-grid { grid-template-columns: 1fr; }
+  .softskills-grid { grid-template-columns: 1fr; }
   .hero-main h1 { font-size: 1.7rem; }
   .navbar a { font-size: 0.8rem; padding: 6px 8px; }
+
+  /* Projets et Compétences : défilement horizontal plutôt qu'empilement vertical */
+  .projects-grid,
+  .skills-tiles {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    gap: 14px;
+    margin: 0 -24px;
+    padding: 4px 24px 14px;
+  }
+
+  .projects-grid .project-card,
+  .skills-tiles .tile-card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
 }
